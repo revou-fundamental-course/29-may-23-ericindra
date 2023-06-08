@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root{
+    ---dark: #000;
+    --prime-color: #272524;
+    --sec-color: yellow ;
+    --white: #fff;
+    --grey: #3c3c36;
+}
+
+body{
+    background-color: var(--prime-color);
+    color: var(--white);
+}
+
+
+/* header */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 16px;
+    border-bottom: solid 1px;
+}
+
+header img{
+    width: 45px;
+    height: 45px;
+}
+
+header .logo{
+    display: flex;
+    align-items: center;
+}
+
+header .logo h3{
+    margin-left: 8px;
+}
+
+header .list-web{
+    background-color: var(--prime-color);
+    color: var(--sec-color);
+    display: flex;
+    text-transform: capitalize;
+    justify-content: space-between;
+}
+
+.btn-page{
+    background-color: var(--prime-color);
+    color: var(--sec-color);
+    display: flex;
+    padding: 3px 10px;
+    margin: 10px 3px;
+    border-radius: 20px;
+    border: solid 2px;
+    align-items: center;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+button:hover{
+    background-color: var(--grey);
+    transform: translateY(-2px);
+}
+
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover{
+    color: var(--sec-color);
+}
+
+/* messages Us */
+.left{
+    width: 100%;
+}
+
+.messageUs{
+    display: block;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 70px;
+}
+
+.content{
+    display: flex;
+    margin-top: 30px;
+}
+
+.left{
+    flex: 3;
+}
+
+.left .items{
+    margin: 0 0.5rem;
+    display: flex;
+}
+
+input{
+    display: inline-block;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+}
+
+form input{
+    margin-bottom: 7px;
+    padding: 5px;
+    background-color: var(--grey);
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+}
+
+.nama, .lahir{
+    width: 100%;
+}
+
+form textarea{
+    padding: .3rem 0.5rem;
+    resize: none;
+    background-color: var(--grey);
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+}
+
+form .btn-submit{
+    width: 100%;
+    margin-top: 8px;
+    transition: all .4s ease-in-out;
+}
+
+.btn-submit:hover{
+    background-color: var(--sec-color);
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.right{
+    flex: 3;
+    margin-left: 3rem;
+}
+
+.hasil{
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    border: solid 1px var(--sec-color);
+    padding: 25px;
+}
+
+.hasil p{
+    display: block;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+}
+
+/* footer */
+footer{
+    margin-top: 40px;
+}
+
+footer p{
+    display: flex;
+    justify-content: end;
+}
+
+footer span{
+    color: var(--sec-color);
+    margin-left: 4px;
+}

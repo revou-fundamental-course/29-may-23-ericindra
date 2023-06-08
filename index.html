@@ -4,9 +4,152 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>My Website</title>
 </head>
 <body>
-    
+    <header>
+        <div class="logo">
+           <img src="img/logo RevoU2.png" alt="">
+           <h3>RevoU Company</h3>
+        </div>
+        <div class="list-web">
+                <button class="btn-page"><a href="index.html">Home</a></button>
+                <button class="btn-page"><a href="profile.html">Our Profile</a></button>
+                <button class="btn-page"><a href="messages.html">Message Us</a></button>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="home" id="home">
+            <div class="pembukaan">
+            <h3>Hi</span>, Welcome To Our Company</h3>
+            <p>Ini adalah website Company Profile</p>
+            </div>
+            <div class="image-change">
+                <img class="img-slide" src="img/pic3.jpg" alt="">
+                <img class="img-slide" src="img/pic2.jpg" alt="">
+                <img class="img-slide" src="img/pic1.jpg" alt="">
+            </div>
+            <button class="btn-control" onclick="plusImg(-1)"><</button>
+            <button class="btn-control" onclick="plusImg(1)">></button>
+        </div>
+
+        <div class="headquarter" id="headquarter">
+           <h3>Our Headquarter</h3>
+           <div class="content">
+            <div class="items">
+                <div class="circle">
+                </div>
+                <h4>Jakarta</h4>
+            </div>
+            <div class="items">
+                <div class="circle">
+                </div>
+                <h4>Surabaya</h4>
+            </div>
+            <div class="items">
+                <div class="circle">
+                </div>
+                <h4>Sidoarjo</h4>
+            </div>
+           </div>
+        </div>
+
+
+            <div class="messageUs" id="messageUs">
+                <h1>Message Us</h1>
+                <div class="content">
+                    <div class="left">
+                        <form name="user-form" onsubmit="return validationForm()">
+                            <div class="items">
+                                <label for="">Nama : </label>
+                                <input class="nama" type="text" name="full-name" placeholder="Nama"><br>
+                            </div>
+
+                            <div class="items">
+                                <label for="">Tanggal Lahir : </label>
+                                <input class="lahir" type="date" name="birth"><br>
+                            </div>
+
+                            <div class="items">
+                                <label for="">Jenis Kelamin : </label>
+                                <input class="rad" type="radio" id="male" name="gender" value="male">laki-laki 
+                                <input class="rad" type="radio" id="female" name="gender" value="female">perempuan <br>
+                            </div>
+
+                            <div class="items">
+                                <label for="">Pesan : </label> 
+                                <textarea name="messages" id="" cols="30" rows="10"placeholder="Pesan" name="messages"></textarea> <br>
+                            </div>
+
+                            <div class="items">
+                                <input class="btn-submit" type="submit" value="submit">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right">
+                        <div class="hasil">
+                            <br>Nama : <span id="user-full-name"></span></br>
+                            <br>Tanggal lahir : <span id="user-birth"></span></br>
+                            <br>Jenis Kelamin : <span id="user-gender"></span></br>
+                            <br>Pesan : <span id="user-messages"></span></br>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- JavaScript -->
+                <script>
+                    function validationForm() {
+                        const name = document.forms["user-form"]["full-name"].value;
+                        const birth = document.forms["user-form"]["birth"].value;
+                        const gender = document.forms["user-form"]["gender"].value;
+                        const messages = document.forms["user-form"]["messages"].value;
+
+                        if (name == "" || birth == "" || gender == "" || messages == "") {
+                            alert("Data tidak boleh ada yang kosong!");
+                            return false;
+                        }
+
+                        setSenderUI(name, birth, gender, messages);
+
+                        return false;
+                    }
+
+                    function setSenderUI(name, birth, gender, messages) {
+                        document.getElementById("user-full-name").innerHTML = name;
+                        document.getElementById("user-birth").innerHTML = birth;
+                        document.getElementById("user-gender").innerHTML = gender;
+                        document.getElementById("user-messages").innerHTML = messages;
+                    }
+
+                    // Script buat slide Image
+                    var indexImg = 1;
+                    displayImg(indexImg);
+
+                    function plusImg(n) {
+                        displayImg((indexImg += n));
+                    }
+
+                    function displayImg(n) {
+                        var i;
+                        var listImg = document.getElementsByClassName("img-slide");
+                        if (n > listImg.length) {
+                            indexImg = 1;
+                        }
+                        if (n < 1) {
+                            indexImg = listImg.length;
+                        }
+                        for (i = 0; i <listImg.length; i++) {
+                            listImg[i].style.display = "none";
+                        }
+                        listImg[indexImg-1].style.display = "block";
+                    }
+                </script>
+            </div>
+    </div>
+    <footer>
+        <h5>Created By <Span>Erick Indra P</Span></h5>
+    </footer>
 </body>
 </html>
